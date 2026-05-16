@@ -1,0 +1,124 @@
+/* --- Skeleton Card --- */
+.skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.skeleton-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.skeleton-card__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.skeleton-card__logo {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.skeleton-card__meta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.skeleton-card__line {
+  height: 14px;
+  border-radius: 6px;
+}
+
+.skeleton-card__line--xs { width: 60px; height: 10px; }
+.skeleton-card__line--sm { width: 120px; }
+.skeleton-card__line--md { width: 75%; }
+.skeleton-card__line--lg { width: 90%; height: 18px; }
+.skeleton-card__line--full { width: 100%; }
+
+.skeleton-card__footer {
+  display: flex;
+  gap: 8px;
+}
+
+.skeleton-card__chip {
+  width: 72px;
+  height: 26px;
+  border-radius: var(--radius-full);
+}
+
+.skeleton-card__btn {
+  height: 40px;
+  border-radius: var(--radius-full);
+  width: 100%;
+}
+
+/* --- Spinner Loader --- */
+.spinner-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 64px 24px;
+  min-height: 300px;
+}
+
+.spinner-loader__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-xl);
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: var(--shadow-glow-blue);
+}
+
+.spinner-loader__text {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+/* --- Empty State --- */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.empty-state__icon {
+  width: 88px;
+  height: 88px;
+  border-radius: var(--radius-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+}
+
+.empty-state__title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.empty-state__message {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  max-width: 400px;
+}
