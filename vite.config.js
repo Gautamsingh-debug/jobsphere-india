@@ -5,14 +5,19 @@ export default defineConfig({
   plugins: [react()],
   build: {
     target: 'esnext',
-    minify: 'terser',
+    minify: 'oxc',
     sourcemap: false,
     rollupOptions: {
       output: {
-        manualChunks: {
-          three: ['three'],
-          r3f: ['@react-three/fiber', '@react-three/drei'],
-          vendor: ['react', 'react-dom', 'react-router-dom', 'framer-motion'],
+        manualChunks: (id) => {
+          if (id.includes('node_modules/three')) return 'three';
+          if (id.includes('@react-three/fiber') || id.includes('@react-three/drei')) return 'r3f';
+          if (
+            id.includes('node_modules/react/') ||
+            id.includes('node_modules/react-dom/') ||
+            id.includes('node_modules/react-router-dom/') ||
+            id.includes('node_modules/framer-motion/')
+          ) return 'vendor';
         },
       },
     },
